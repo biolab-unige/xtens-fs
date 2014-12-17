@@ -1,0 +1,25 @@
+{
+  "name": "xtens-fs",
+  "version": "1.0.0",
+  "description": "A module for managing interaction with the file system in XTENS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/biolab-unige/xtens-fs.git"
+  },
+  "keywords": [
+    "file",
+    "storage",
+    "xtens",
+    "irods"
+  ],
+  "author": "Massimiliano Izzo",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/biolab-unige/xtens-fs/issues"
+  },
+  "homepage": "https://github.com/biolab-unige/xtens-fs"
+}
