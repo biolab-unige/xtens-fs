@@ -21,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/biolab-unige/xtens-fs/issues"
   },
-  "homepage": "https://github.com/biolab-unige/xtens-fs"
+  "homepage": "https://github.com/biolab-unige/xtens-fs",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1",
+    "sinon": "^1.12.2"
+  }
 }
