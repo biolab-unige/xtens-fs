@@ -3,10 +3,11 @@ var sinon = require("sinon");
 var IrodsRestStrategy = require("../lib/IrodsRestStrategy.js");
 
 var opts = {
+    type: 'irodsRest',
     irodsHome: '/testZone/home/test',
     landingCollection: 'landing',
     repoCollection: 'repo',
-    irodsRest: {
+    restURL: {
         hostname: 'http://someaddress',
         port: 8080,  // default tomcat port
         path: '/irods-rest/rest'
@@ -35,7 +36,7 @@ describe("#IrodsRestStrategy", function() {
             expect(strategy.irodsHome).to.equal(opts.irodsHome);
             expect(strategy.landingCollection).to.equal(opts.landingCollection);
             expect(strategy.repoCollection).to.equal(opts.repoCollection);
-            expect(strategy.irodsRest).to.eql(opts.irodsRest);
+            expect(strategy.restURL).to.eql(opts.restURL);
             expect(strategy.username).to.equal(opts.username);
             expect(strategy.password).to.equal(opts.password);
         });
@@ -78,7 +79,7 @@ describe("#IrodsRestStrategy", function() {
         });
 
         beforeEach(function() {
-            var url = opts.irodsRest.hostname + ":" + opts.irodsRest.port + opts.irodsRest.path + "/rule";
+            var url = opts.restURL.hostname + ":" + opts.restURL.port + opts.restURL.path + "/rule";
             console.log(url); 
             var response = '[200, {"Content-Type": "application/json"}, {"outputParameterResults": []}]';  // response status, header & body
             this.server.respondWith("POST", url, response);
