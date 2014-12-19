@@ -5,7 +5,7 @@ dependencies.IrodsRestStrategy = require('./../lib/IrodsRestStrategy.js');
 var FileSystemManager = require('./../lib/FileSystemManager.js');
 
 var opts = {
-    type: 'irodsRest',
+    type: 'irods-rest',
     irodsHome: '/testZone/home/test',
     landingCollection: 'landing',
     repoCollection: 'repo',
