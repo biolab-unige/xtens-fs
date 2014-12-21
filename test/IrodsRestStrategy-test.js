@@ -3,7 +3,7 @@ var sinon = require("sinon");
 var IrodsRestStrategy = require("../lib/IrodsRestStrategy.js");
 
 var opts = {
-    type: 'irodsRest',
+    type: 'irods-rest',
     irodsHome: '/testZone/home/test',
     landingCollection: 'landing',
     repoCollection: 'repo',
@@ -27,9 +27,9 @@ function testCallback() {
 } 
 
 describe("#IrodsRestStrategy", function() {
-    
+
     describe("#constructor", function() {
-        
+
         it("should instantiate a new IrodsRestStrategy object if options are provided", function() {
             var strategy = new IrodsRestStrategy(opts);
             expect(strategy).to.be.instanceof(IrodsRestStrategy);
@@ -62,13 +62,13 @@ describe("#IrodsRestStrategy", function() {
             expect(spy.called).to.be.true;
             expect(spy.calledOnce).to.be.true;
         });
-    
+
     });
 
     describe("#storeFile", function() {
 
         var strategy = new IrodsRestStrategy(opts);
-        
+
         before(function() {
             this.server = sinon.fakeServer.create();
             this.testCallback = testCallback;
@@ -93,7 +93,8 @@ describe("#IrodsRestStrategy", function() {
             this.server.respond();
             // expect(this.stub.calledOnce).to.be.true;
         });
-    
+
     });
 
+   
 });
