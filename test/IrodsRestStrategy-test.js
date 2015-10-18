@@ -43,7 +43,7 @@ describe("#IrodsRestStrategy", function() {
 
     });
 
-    describe("#editDataFile", function() {
+    describe("#_editDataFile", function() {
 
         var strategy = new IrodsRestStrategy(opts);
 
@@ -54,7 +54,7 @@ describe("#IrodsRestStrategy", function() {
         it("should edit a Data File instance removing the name and creating the URI property", function() {
             var file = { name: fileName};
             var spy = sinon.spy(this, "testCallback");
-            strategy.editDataFile(file, idData, dataTypeName, spy);
+            strategy._editDataFile(file, idData, dataTypeName, spy);
             expect(file).to.not.have.property('name');
             var uri = opts.irodsHome + "/" + opts.repoCollection + "/" + dataTypeName + "/" + idData + "/" + fileName;
             expect(file.uri).to.equal(uri);
@@ -83,7 +83,7 @@ describe("#IrodsRestStrategy", function() {
             console.log(url); 
             var response = '[200, {"Content-Type": "application/json"}, {"outputParameterResults": []}]';  // response status, header & body
             this.server.respondWith("POST", url, response);
-            this.stub = sinon.stub(strategy, 'editDataFile');
+            this.stub = sinon.stub(strategy, '_editDataFile');
             this.stub.returns(undefined);
         });
 
