@@ -25,7 +25,8 @@
   "dependencies": {
     "bluebird": "^2.4.2",
     "fs-extra": "^0.24.0",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "request": "^2.65.0"
   },
   "devDependencies": {
     "chai": "^1.10.0",
